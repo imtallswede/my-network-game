@@ -1,0 +1,2508 @@
+{
+  "name": "Campus Connect assets",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "generated_by": "assets/_source/build_assets.py",
+  "counts": {
+    "images": 103,
+    "audio": 53
+  },
+  "assets": [
+    {
+      "id": "ap",
+      "type": "image",
+      "category": "equipment",
+      "title": "Access point",
+      "description": "A ceiling-mount Wi-Fi access point seen from below, with a green status light and three teal signal arcs.",
+      "use": "Map sprite for a placed AP (FR-002). Pair it with a channel badge so the channel is never colour-only.",
+      "files": {
+        "svg": "images/equipment/ap.svg",
+        "png": "images/equipment/ap.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 256,
+      "png_height": 256
+    },
+    {
+      "id": "ap-placement-preview",
+      "type": "image",
+      "category": "equipment",
+      "title": "Access point placement preview",
+      "description": "A dashed, see-through outline of an access point, shown where the map cursor would place one.",
+      "use": "Ghost sprite under the map cursor while placing an AP; swap to the solid sprite on confirm.",
+      "files": {
+        "svg": "images/equipment/ap-placement-preview.svg",
+        "png": "images/equipment/ap-placement-preview.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 256,
+      "png_height": 256
+    },
+    {
+      "id": "ap-channel-conflict",
+      "type": "image",
+      "category": "equipment",
+      "title": "Access point with channel conflict",
+      "description": "An access point whose signal arcs clash with orange zig-zag arcs, plus an orange warning triangle with an exclamation mark.",
+      "use": "Map sprite when an AP has at least one conflicting neighbour (FR-007). Show the effective capacity number beside it.",
+      "files": {
+        "svg": "images/equipment/ap-channel-conflict.svg",
+        "png": "images/equipment/ap-channel-conflict.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 256,
+      "png_height": 256
+    },
+    {
+      "id": "ap-overloaded",
+      "type": "image",
+      "category": "equipment",
+      "title": "Overloaded access point",
+      "description": "An access point with a gauge above it whose needle is pushed past the red end of the scale.",
+      "use": "Map sprite when an AP's users demand more than its capacity (FR-009). Show the utilisation % beside it.",
+      "files": {
+        "svg": "images/equipment/ap-overloaded.svg",
+        "png": "images/equipment/ap-overloaded.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 256,
+      "png_height": 256
+    },
+    {
+      "id": "uplink-100mbps",
+      "type": "image",
+      "category": "equipment",
+      "title": "100 Mbps uplink",
+      "description": "A single network cable plug with a label reading 100M.",
+      "use": "Building uplink icon for the $200 100 Mbps option (FR-003).",
+      "files": {
+        "svg": "images/equipment/uplink-100mbps.svg",
+        "png": "images/equipment/uplink-100mbps.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 256,
+      "png_height": 256
+    },
+    {
+      "id": "uplink-1gbps",
+      "type": "image",
+      "category": "equipment",
+      "title": "1 Gbps uplink",
+      "description": "A thicker double fibre cable with a gold connector and a label reading 1G.",
+      "use": "Building uplink icon for the $800 1 Gbps option or an upgrade (FR-003).",
+      "files": {
+        "svg": "images/equipment/uplink-1gbps.svg",
+        "png": "images/equipment/uplink-1gbps.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 256,
+      "png_height": 256
+    },
+    {
+      "id": "uplink-failed",
+      "type": "image",
+      "category": "equipment",
+      "title": "Failed uplink",
+      "description": "A grey network cable cut in two, with a spark in the gap and a red cross, labelled DOWN.",
+      "use": "Uplink icon after a scheduled failure (FR-011, Level 3). Pair it with the grey 'Uplink down' zone overlay.",
+      "files": {
+        "svg": "images/equipment/uplink-failed.svg",
+        "png": "images/equipment/uplink-failed.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 256,
+      "png_height": 256
+    },
+    {
+      "id": "core-switch",
+      "type": "image",
+      "category": "equipment",
+      "title": "Campus core switch",
+      "description": "A rack-mounted network switch with eight ports, each with a small status light.",
+      "use": "Where building uplinks terminate; good for the network-closet panel or the uplink purchase dialog.",
+      "files": {
+        "svg": "images/equipment/core-switch.svg",
+        "png": "images/equipment/core-switch.png"
+      },
+      "width": 96,
+      "height": 48,
+      "png_width": 256,
+      "png_height": 128
+    },
+    {
+      "id": "channel-01",
+      "type": "image",
+      "category": "channels",
+      "title": "Channel 1 badge",
+      "description": "A round badge showing the number 1. Solid fill: one of the three non-overlapping 2.4 GHz channels.",
+      "use": "Badge drawn beside an AP and in the zone table so the channel is readable as a number (FR-007, FR-035).",
+      "files": {
+        "svg": "images/channels/channel-01.svg",
+        "png": "images/channels/channel-01.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "channel-02",
+      "type": "image",
+      "category": "channels",
+      "title": "Channel 2 badge",
+      "description": "A round badge showing the number 2. White with a dashed outline: an overlapping channel.",
+      "use": "Badge drawn beside an AP and in the zone table so the channel is readable as a number (FR-007, FR-035).",
+      "files": {
+        "svg": "images/channels/channel-02.svg",
+        "png": "images/channels/channel-02.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "channel-03",
+      "type": "image",
+      "category": "channels",
+      "title": "Channel 3 badge",
+      "description": "A round badge showing the number 3. White with a dashed outline: an overlapping channel.",
+      "use": "Badge drawn beside an AP and in the zone table so the channel is readable as a number (FR-007, FR-035).",
+      "files": {
+        "svg": "images/channels/channel-03.svg",
+        "png": "images/channels/channel-03.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "channel-04",
+      "type": "image",
+      "category": "channels",
+      "title": "Channel 4 badge",
+      "description": "A round badge showing the number 4. White with a dashed outline: an overlapping channel.",
+      "use": "Badge drawn beside an AP and in the zone table so the channel is readable as a number (FR-007, FR-035).",
+      "files": {
+        "svg": "images/channels/channel-04.svg",
+        "png": "images/channels/channel-04.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "channel-05",
+      "type": "image",
+      "category": "channels",
+      "title": "Channel 5 badge",
+      "description": "A round badge showing the number 5. White with a dashed outline: an overlapping channel.",
+      "use": "Badge drawn beside an AP and in the zone table so the channel is readable as a number (FR-007, FR-035).",
+      "files": {
+        "svg": "images/channels/channel-05.svg",
+        "png": "images/channels/channel-05.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "channel-06",
+      "type": "image",
+      "category": "channels",
+      "title": "Channel 6 badge",
+      "description": "A round badge showing the number 6. Solid fill: one of the three non-overlapping 2.4 GHz channels.",
+      "use": "Badge drawn beside an AP and in the zone table so the channel is readable as a number (FR-007, FR-035).",
+      "files": {
+        "svg": "images/channels/channel-06.svg",
+        "png": "images/channels/channel-06.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "channel-07",
+      "type": "image",
+      "category": "channels",
+      "title": "Channel 7 badge",
+      "description": "A round badge showing the number 7. White with a dashed outline: an overlapping channel.",
+      "use": "Badge drawn beside an AP and in the zone table so the channel is readable as a number (FR-007, FR-035).",
+      "files": {
+        "svg": "images/channels/channel-07.svg",
+        "png": "images/channels/channel-07.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "channel-08",
+      "type": "image",
+      "category": "channels",
+      "title": "Channel 8 badge",
+      "description": "A round badge showing the number 8. White with a dashed outline: an overlapping channel.",
+      "use": "Badge drawn beside an AP and in the zone table so the channel is readable as a number (FR-007, FR-035).",
+      "files": {
+        "svg": "images/channels/channel-08.svg",
+        "png": "images/channels/channel-08.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "channel-09",
+      "type": "image",
+      "category": "channels",
+      "title": "Channel 9 badge",
+      "description": "A round badge showing the number 9. White with a dashed outline: an overlapping channel.",
+      "use": "Badge drawn beside an AP and in the zone table so the channel is readable as a number (FR-007, FR-035).",
+      "files": {
+        "svg": "images/channels/channel-09.svg",
+        "png": "images/channels/channel-09.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "channel-10",
+      "type": "image",
+      "category": "channels",
+      "title": "Channel 10 badge",
+      "description": "A round badge showing the number 10. White with a dashed outline: an overlapping channel.",
+      "use": "Badge drawn beside an AP and in the zone table so the channel is readable as a number (FR-007, FR-035).",
+      "files": {
+        "svg": "images/channels/channel-10.svg",
+        "png": "images/channels/channel-10.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "channel-11",
+      "type": "image",
+      "category": "channels",
+      "title": "Channel 11 badge",
+      "description": "A round badge showing the number 11. Solid fill: one of the three non-overlapping 2.4 GHz channels.",
+      "use": "Badge drawn beside an AP and in the zone table so the channel is readable as a number (FR-007, FR-035).",
+      "files": {
+        "svg": "images/channels/channel-11.svg",
+        "png": "images/channels/channel-11.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "building-library",
+      "type": "image",
+      "category": "buildings",
+      "title": "Library",
+      "description": "A classical brick-and-cream campus library with four columns, a round window and front steps.",
+      "use": "Level 1 'Orientation Week' building and briefing art (FR-031).",
+      "files": {
+        "svg": "images/buildings/building-library.svg",
+        "png": "images/buildings/building-library.png"
+      },
+      "width": 128,
+      "height": 128,
+      "png_width": 384,
+      "png_height": 384
+    },
+    {
+      "id": "building-dorm",
+      "type": "image",
+      "category": "buildings",
+      "title": "Dormitory",
+      "description": "A four-storey brick dorm with lit and unlit windows and a stack of moving boxes by the door.",
+      "use": "Level 2 'Dorm Move-In' building and briefing art (FR-031).",
+      "files": {
+        "svg": "images/buildings/building-dorm.svg",
+        "png": "images/buildings/building-dorm.png"
+      },
+      "width": 128,
+      "height": 128,
+      "png_width": 384,
+      "png_height": 384
+    },
+    {
+      "id": "building-stadium",
+      "type": "image",
+      "category": "buildings",
+      "title": "Stadium",
+      "description": "A top-down oval stadium with grey stands, a green field with yard lines, and teal and amber end zones.",
+      "use": "Level 3 'Homecoming' stadium (FR-031).",
+      "files": {
+        "svg": "images/buildings/building-stadium.svg",
+        "png": "images/buildings/building-stadium.png"
+      },
+      "width": 128,
+      "height": 128,
+      "png_width": 384,
+      "png_height": 384
+    },
+    {
+      "id": "building-student-center",
+      "type": "image",
+      "category": "buildings",
+      "title": "Student center",
+      "description": "A modern student center with a glass front, an amber entrance canopy and a red flag on the roof.",
+      "use": "Level 3 student center, the building with the scheduled uplink failure (FR-031).",
+      "files": {
+        "svg": "images/buildings/building-student-center.svg",
+        "png": "images/buildings/building-student-center.png"
+      },
+      "width": 128,
+      "height": 128,
+      "png_width": 384,
+      "png_height": 384
+    },
+    {
+      "id": "tile-grass",
+      "type": "image",
+      "category": "tiles",
+      "title": "Grass tile",
+      "description": "A square of campus lawn with a few grass tufts.",
+      "use": "Map cell outside any building. One tile = one 5 m x 5 m cell (FR-001).",
+      "files": {
+        "svg": "images/map/tile-grass.svg",
+        "png": "images/map/tile-grass.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "tile-path",
+      "type": "image",
+      "category": "tiles",
+      "title": "Footpath tile",
+      "description": "A square of sandy paving with rounded stones.",
+      "use": "Map cell for campus walkways between buildings.",
+      "files": {
+        "svg": "images/map/tile-path.svg",
+        "png": "images/map/tile-path.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "tile-floor",
+      "type": "image",
+      "category": "tiles",
+      "title": "Indoor floor tile",
+      "description": "Light floor tiles in a 2 x 2 grid, used inside buildings.",
+      "use": "Map cell for a zone inside a building (FR-001).",
+      "files": {
+        "svg": "images/map/tile-floor.svg",
+        "png": "images/map/tile-floor.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "tile-field",
+      "type": "image",
+      "category": "tiles",
+      "title": "Playing field tile",
+      "description": "Bright turf with a white yard line.",
+      "use": "Map cell inside the stadium (Level 3).",
+      "files": {
+        "svg": "images/map/tile-field.svg",
+        "png": "images/map/tile-field.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "map-cursor",
+      "type": "image",
+      "category": "tiles",
+      "title": "Map cursor",
+      "description": "Four thick corner brackets that frame one map cell.",
+      "use": "Keyboard map cursor and current selection (FR-036). High contrast, so it works on every tile.",
+      "files": {
+        "svg": "images/map/map-cursor.svg",
+        "png": "images/map/map-cursor.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "overlay-not-covered",
+      "type": "image",
+      "category": "overlays",
+      "title": "Not covered overlay",
+      "description": "A see-through tile with dark diagonal hatching and a small crossed-out Wi-Fi symbol.",
+      "use": "Draw over a zone whose RSSI is below -67 dBm (FR-006). The hatching shows coverage without relying on colour.",
+      "files": {
+        "svg": "images/map/overlay-not-covered.svg",
+        "png": "images/map/overlay-not-covered.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "overlay-congested",
+      "type": "image",
+      "category": "overlays",
+      "title": "Congested overlay",
+      "description": "A see-through tile with bold amber chevrons, like a slow-traffic road marking.",
+      "use": "Draw over zones served by an overloaded AP or a congested uplink (FR-009, FR-010).",
+      "files": {
+        "svg": "images/map/overlay-congested.svg",
+        "png": "images/map/overlay-congested.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "overlay-uplink-down",
+      "type": "image",
+      "category": "overlays",
+      "title": "Uplink down overlay",
+      "description": "A grey see-through tile with a dotted grid and a small broken-plug symbol.",
+      "use": "Draw over every zone in a building with no working uplink; users show grey 'Uplink down' status (Level 3).",
+      "files": {
+        "svg": "images/map/overlay-uplink-down.svg",
+        "png": "images/map/overlay-uplink-down.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "overlay-ticket-zone",
+      "type": "image",
+      "category": "overlays",
+      "title": "Open-ticket zone overlay",
+      "description": "A tile outlined with a pink dashed border and a small ticket in the corner.",
+      "use": "Marks the zone that an open trouble ticket belongs to (FR-014).",
+      "files": {
+        "svg": "images/map/overlay-ticket-zone.svg",
+        "png": "images/map/overlay-ticket-zone.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "wall-drywall",
+      "type": "image",
+      "category": "walls",
+      "title": "Drywall wall segment",
+      "description": "A pale wall segment with dashed vertical seams between panels.",
+      "use": "Wall on a cell edge; 3 dB loss in the model (FR-005, illustrative).",
+      "files": {
+        "svg": "images/map/wall-drywall.svg",
+        "png": "images/map/wall-drywall.png"
+      },
+      "width": 64,
+      "height": 16,
+      "png_width": 256,
+      "png_height": 64
+    },
+    {
+      "id": "wall-brick",
+      "type": "image",
+      "category": "walls",
+      "title": "Brick wall segment",
+      "description": "A red brick wall segment in a running-bond pattern.",
+      "use": "Wall on a cell edge; 8 dB loss in the model (FR-005, illustrative).",
+      "files": {
+        "svg": "images/map/wall-brick.svg",
+        "png": "images/map/wall-brick.png"
+      },
+      "width": 64,
+      "height": 16,
+      "png_width": 256,
+      "png_height": 64
+    },
+    {
+      "id": "wall-concrete",
+      "type": "image",
+      "category": "walls",
+      "title": "Concrete wall segment",
+      "description": "A thick grey concrete wall segment with diagonal hatching and aggregate speckles.",
+      "use": "Wall on a cell edge; 12 dB loss in the model (FR-005, illustrative).",
+      "files": {
+        "svg": "images/map/wall-concrete.svg",
+        "png": "images/map/wall-concrete.png"
+      },
+      "width": 64,
+      "height": 16,
+      "png_width": 256,
+      "png_height": 64
+    },
+    {
+      "id": "user-light",
+      "type": "image",
+      "category": "users",
+      "title": "Light user",
+      "description": "A student with short dark hair holding an open laptop.",
+      "use": "Map sprite for a Light user: browsing and email, 2 Mbps (FR-008).",
+      "files": {
+        "svg": "images/users/user-light.svg",
+        "png": "images/users/user-light.png"
+      },
+      "width": 48,
+      "height": 48,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "user-video",
+      "type": "image",
+      "category": "users",
+      "title": "Video user",
+      "description": "A student in a cap holding a phone that shows a play button.",
+      "use": "Map sprite for a Video user: streaming, 5 Mbps (FR-008).",
+      "files": {
+        "svg": "images/users/user-video.svg",
+        "png": "images/users/user-video.png"
+      },
+      "width": 48,
+      "height": 48,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "user-event",
+      "type": "image",
+      "category": "users",
+      "title": "Event user",
+      "description": "A fan with curly hair waving an amber pennant.",
+      "use": "Map sprite for an Event user at Homecoming: 3 Mbps (FR-008, Level 3).",
+      "files": {
+        "svg": "images/users/user-event.svg",
+        "png": "images/users/user-event.png"
+      },
+      "width": 48,
+      "height": 48,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "user-help-desk",
+      "type": "image",
+      "category": "users",
+      "title": "Help-desk technician",
+      "description": "A technician with a bun, wearing a headset and holding a clipboard.",
+      "use": "Optional character for hint panels or the ticket queue header.",
+      "files": {
+        "svg": "images/users/user-help-desk.svg",
+        "png": "images/users/user-help-desk.png"
+      },
+      "width": 48,
+      "height": 48,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "status-satisfied",
+      "type": "image",
+      "category": "users",
+      "title": "Satisfied status badge",
+      "description": "A green circle with a white check mark.",
+      "use": "Small badge over a user or zone at 100% satisfaction.",
+      "files": {
+        "svg": "images/users/status-satisfied.svg",
+        "png": "images/users/status-satisfied.png"
+      },
+      "width": 24,
+      "height": 24,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "status-slow",
+      "type": "image",
+      "category": "users",
+      "title": "Slow status badge",
+      "description": "An amber triangle with an exclamation mark.",
+      "use": "Small badge over a user or zone below 100% satisfaction.",
+      "files": {
+        "svg": "images/users/status-slow.svg",
+        "png": "images/users/status-slow.png"
+      },
+      "width": 24,
+      "height": 24,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "status-offline",
+      "type": "image",
+      "category": "users",
+      "title": "Offline status badge",
+      "description": "A grey square with a white cross.",
+      "use": "Small badge over a user who gets 0 Mbps (not covered or uplink down).",
+      "files": {
+        "svg": "images/users/status-offline.svg",
+        "png": "images/users/status-offline.png"
+      },
+      "width": 24,
+      "height": 24,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "cause-weak-signal",
+      "type": "image",
+      "category": "diagnosis",
+      "title": "Diagnosis: Weak signal",
+      "description": "A Wi-Fi symbol with only the smallest arc solid; the two outer arcs are grey and dashed, with a down arrow.",
+      "use": "Diagnosis option button for 'Weak signal' (zone RSSI below -67 dBm).",
+      "files": {
+        "svg": "images/diagnosis/cause-weak-signal.svg",
+        "png": "images/diagnosis/cause-weak-signal.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "cause-ap-overloaded",
+      "type": "image",
+      "category": "diagnosis",
+      "title": "Diagnosis: AP overloaded",
+      "description": "A small access point under a crowd of three heads, with a gauge needle in the red.",
+      "use": "Diagnosis option button for 'AP overloaded' (users demand more than 100 Mbps).",
+      "files": {
+        "svg": "images/diagnosis/cause-ap-overloaded.svg",
+        "png": "images/diagnosis/cause-ap-overloaded.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "cause-uplink-congested",
+      "type": "image",
+      "category": "diagnosis",
+      "title": "Diagnosis: Uplink congested",
+      "description": "A funnel packed with coloured traffic dots, squeezing into a thin pipe.",
+      "use": "Diagnosis option button for 'Uplink congested' (building traffic above uplink capacity).",
+      "files": {
+        "svg": "images/diagnosis/cause-uplink-congested.svg",
+        "png": "images/diagnosis/cause-uplink-congested.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "cause-channel-interference",
+      "type": "image",
+      "category": "diagnosis",
+      "title": "Diagnosis: Channel interference",
+      "description": "Two overlapping wave lines, one teal and one orange, with a lightning bolt where they cross.",
+      "use": "Diagnosis option button for 'Channel interference' (AP conflict and utilisation above effective capacity).",
+      "files": {
+        "svg": "images/diagnosis/cause-channel-interference.svg",
+        "png": "images/diagnosis/cause-channel-interference.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "cause-uplink-down",
+      "type": "image",
+      "category": "diagnosis",
+      "title": "Diagnosis: Uplink down",
+      "description": "A cable broken into two pieces with a red cross between them.",
+      "use": "Diagnosis option button for 'Uplink down' (building has no working uplink).",
+      "files": {
+        "svg": "images/diagnosis/cause-uplink-down.svg",
+        "png": "images/diagnosis/cause-uplink-down.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "ticket-open",
+      "type": "image",
+      "category": "tickets",
+      "title": "Open ticket",
+      "description": "A pink paper trouble ticket with an orange circle and exclamation mark.",
+      "use": "Ticket queue row icon for an open ticket (FR-014).",
+      "files": {
+        "svg": "images/tickets/ticket-open.svg",
+        "png": "images/tickets/ticket-open.png"
+      },
+      "width": 64,
+      "height": 48,
+      "png_width": 192,
+      "png_height": 144
+    },
+    {
+      "id": "ticket-diagnosed",
+      "type": "image",
+      "category": "tickets",
+      "title": "Ticket diagnosed, awaiting fix",
+      "description": "A trouble ticket with a blue circle holding a wrench.",
+      "use": "Ticket status 'Diagnosed - awaiting fix'. The ticket is still open and still ageing (FR-017, FR-020).",
+      "files": {
+        "svg": "images/tickets/ticket-diagnosed.svg",
+        "png": "images/tickets/ticket-diagnosed.png"
+      },
+      "width": 64,
+      "height": 48,
+      "png_width": 192,
+      "png_height": 144
+    },
+    {
+      "id": "ticket-closed",
+      "type": "image",
+      "category": "tickets",
+      "title": "Closed ticket",
+      "description": "A trouble ticket with a green circle and a check mark.",
+      "use": "Ticket status when the zone reaches 100% satisfaction after a correct diagnosis (FR-017).",
+      "files": {
+        "svg": "images/tickets/ticket-closed.svg",
+        "png": "images/tickets/ticket-closed.png"
+      },
+      "width": 64,
+      "height": 48,
+      "png_width": 192,
+      "png_height": 144
+    },
+    {
+      "id": "ticket-resolved-by-change",
+      "type": "image",
+      "category": "tickets",
+      "title": "Ticket resolved by network change",
+      "description": "A trouble ticket with a grey gear, meaning the network change fixed it before a diagnosis.",
+      "use": "Ticket status 'Resolved by network change' (FR-017a). No diagnosis points.",
+      "files": {
+        "svg": "images/tickets/ticket-resolved-by-change.svg",
+        "png": "images/tickets/ticket-resolved-by-change.png"
+      },
+      "width": 64,
+      "height": 48,
+      "png_width": 192,
+      "png_height": 144
+    },
+    {
+      "id": "scheduled-maintenance-risk",
+      "type": "image",
+      "category": "tickets",
+      "title": "Scheduled maintenance risk",
+      "description": "A calendar page with a hazard triangle and a wrench.",
+      "use": "Warning shown in the Level 3 briefing and Wave 2 preview before the uplink failure (US5 scenario 5).",
+      "files": {
+        "svg": "images/tickets/scheduled-maintenance-risk.svg",
+        "png": "images/tickets/scheduled-maintenance-risk.png"
+      },
+      "width": 64,
+      "height": 64,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "signal-0-of-4",
+      "type": "image",
+      "category": "signal",
+      "title": "Signal strength 0 of 4",
+      "description": "Four rising bars with 0 filled in teal.",
+      "use": "Compact RSSI indicator for the zone panel. Always show the dBm number next to it (FR-035).",
+      "files": {
+        "svg": "images/ui/signal-0-of-4.svg",
+        "png": "images/ui/signal-0-of-4.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "signal-1-of-4",
+      "type": "image",
+      "category": "signal",
+      "title": "Signal strength 1 of 4",
+      "description": "Four rising bars with 1 filled in teal.",
+      "use": "Compact RSSI indicator for the zone panel. Always show the dBm number next to it (FR-035).",
+      "files": {
+        "svg": "images/ui/signal-1-of-4.svg",
+        "png": "images/ui/signal-1-of-4.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "signal-2-of-4",
+      "type": "image",
+      "category": "signal",
+      "title": "Signal strength 2 of 4",
+      "description": "Four rising bars with 2 filled in teal.",
+      "use": "Compact RSSI indicator for the zone panel. Always show the dBm number next to it (FR-035).",
+      "files": {
+        "svg": "images/ui/signal-2-of-4.svg",
+        "png": "images/ui/signal-2-of-4.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "signal-3-of-4",
+      "type": "image",
+      "category": "signal",
+      "title": "Signal strength 3 of 4",
+      "description": "Four rising bars with 3 filled in teal.",
+      "use": "Compact RSSI indicator for the zone panel. Always show the dBm number next to it (FR-035).",
+      "files": {
+        "svg": "images/ui/signal-3-of-4.svg",
+        "png": "images/ui/signal-3-of-4.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "signal-4-of-4",
+      "type": "image",
+      "category": "signal",
+      "title": "Signal strength 4 of 4",
+      "description": "Four rising bars with 4 filled in teal.",
+      "use": "Compact RSSI indicator for the zone panel. Always show the dBm number next to it (FR-035).",
+      "files": {
+        "svg": "images/ui/signal-4-of-4.svg",
+        "png": "images/ui/signal-4-of-4.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-pause",
+      "type": "image",
+      "category": "ui",
+      "title": "Pause",
+      "description": "Two vertical bars.",
+      "use": "Pause button; Space key (FR-021).",
+      "files": {
+        "svg": "images/ui/ui-pause.svg",
+        "png": "images/ui/ui-pause.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-play",
+      "type": "image",
+      "category": "ui",
+      "title": "Play",
+      "description": "A right-pointing triangle.",
+      "use": "Resume button (FR-021).",
+      "files": {
+        "svg": "images/ui/ui-play.svg",
+        "png": "images/ui/ui-play.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-speed-1x",
+      "type": "image",
+      "category": "ui",
+      "title": "Normal speed",
+      "description": "One triangle followed by 1x.",
+      "use": "Clock speed 1x (FR-021).",
+      "files": {
+        "svg": "images/ui/ui-speed-1x.svg",
+        "png": "images/ui/ui-speed-1x.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-speed-2x",
+      "type": "image",
+      "category": "ui",
+      "title": "Double speed",
+      "description": "Two triangles followed by 2x.",
+      "use": "Clock speed 2x (FR-021).",
+      "files": {
+        "svg": "images/ui/ui-speed-2x.svg",
+        "png": "images/ui/ui-speed-2x.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-auto-pause",
+      "type": "image",
+      "category": "ui",
+      "title": "Auto-pause setting",
+      "description": "A pause symbol inside a circle with a small letter A.",
+      "use": "Toggle for auto-pause on tickets and reviews (FR-022).",
+      "files": {
+        "svg": "images/ui/ui-auto-pause.svg",
+        "png": "images/ui/ui-auto-pause.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-hint",
+      "type": "image",
+      "category": "ui",
+      "title": "Hint",
+      "description": "A lit light bulb.",
+      "use": "Hint button: method first, then worked solution (FR-019).",
+      "files": {
+        "svg": "images/ui/ui-hint.svg",
+        "png": "images/ui/ui-hint.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-budget",
+      "type": "image",
+      "category": "ui",
+      "title": "Budget",
+      "description": "A gold coin with a dollar sign.",
+      "use": "Budget readout (FR-034).",
+      "files": {
+        "svg": "images/ui/ui-budget.svg",
+        "png": "images/ui/ui-budget.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-score",
+      "type": "image",
+      "category": "ui",
+      "title": "Score",
+      "description": "A five-point star.",
+      "use": "Score readout (FR-029).",
+      "files": {
+        "svg": "images/ui/ui-score.svg",
+        "png": "images/ui/ui-score.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-satisfaction",
+      "type": "image",
+      "category": "ui",
+      "title": "Campus satisfaction",
+      "description": "A smiling face.",
+      "use": "Campus satisfaction readout (FR-012, FR-034).",
+      "files": {
+        "svg": "images/ui/ui-satisfaction.svg",
+        "png": "images/ui/ui-satisfaction.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-clock",
+      "type": "image",
+      "category": "ui",
+      "title": "Simulation clock",
+      "description": "A clock face with hands at about ten past.",
+      "use": "Clock readout (FR-034).",
+      "files": {
+        "svg": "images/ui/ui-clock.svg",
+        "png": "images/ui/ui-clock.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-restart",
+      "type": "image",
+      "category": "ui",
+      "title": "Restart",
+      "description": "A circular arrow.",
+      "use": "Restart session; must confirm (FR-027).",
+      "files": {
+        "svg": "images/ui/ui-restart.svg",
+        "png": "images/ui/ui-restart.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-retry-level",
+      "type": "image",
+      "category": "ui",
+      "title": "Retry level",
+      "description": "A circular arrow around a small flag.",
+      "use": "Retry level after being fired (FR-025).",
+      "files": {
+        "svg": "images/ui/ui-retry-level.svg",
+        "png": "images/ui/ui-retry-level.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-zone-table",
+      "type": "image",
+      "category": "ui",
+      "title": "Zone table",
+      "description": "A small table with a header row and three rows.",
+      "use": "Zone table tab, the text equivalent of the map (FR-035).",
+      "files": {
+        "svg": "images/ui/ui-zone-table.svg",
+        "png": "images/ui/ui-zone-table.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-map",
+      "type": "image",
+      "category": "ui",
+      "title": "Campus map",
+      "description": "A folded map with a location pin.",
+      "use": "Map tab.",
+      "files": {
+        "svg": "images/ui/ui-map.svg",
+        "png": "images/ui/ui-map.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-info",
+      "type": "image",
+      "category": "ui",
+      "title": "Information",
+      "description": "A lowercase i in a circle.",
+      "use": "Briefing / model note button (FR-028).",
+      "files": {
+        "svg": "images/ui/ui-info.svg",
+        "png": "images/ui/ui-info.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-close",
+      "type": "image",
+      "category": "ui",
+      "title": "Close",
+      "description": "A cross.",
+      "use": "Close a dialog or panel.",
+      "files": {
+        "svg": "images/ui/ui-close.svg",
+        "png": "images/ui/ui-close.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-confirm",
+      "type": "image",
+      "category": "ui",
+      "title": "Confirm",
+      "description": "A check mark.",
+      "use": "Confirm buttons, e.g. diagnosis submit.",
+      "files": {
+        "svg": "images/ui/ui-confirm.svg",
+        "png": "images/ui/ui-confirm.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-place-ap",
+      "type": "image",
+      "category": "ui",
+      "title": "Place access point",
+      "description": "A small access point with a plus sign.",
+      "use": "Build tool: place AP ($500).",
+      "files": {
+        "svg": "images/ui/ui-place-ap.svg",
+        "png": "images/ui/ui-place-ap.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-remove",
+      "type": "image",
+      "category": "ui",
+      "title": "Remove equipment",
+      "description": "A trash can.",
+      "use": "Remove AP or uplink; 100% refund (FR-003).",
+      "files": {
+        "svg": "images/ui/ui-remove.svg",
+        "png": "images/ui/ui-remove.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-buy-uplink",
+      "type": "image",
+      "category": "ui",
+      "title": "Buy uplink",
+      "description": "A cable plug with a plus sign.",
+      "use": "Build tool: buy or upgrade an uplink.",
+      "files": {
+        "svg": "images/ui/ui-buy-uplink.svg",
+        "png": "images/ui/ui-buy-uplink.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-channel",
+      "type": "image",
+      "category": "ui",
+      "title": "Set channel",
+      "description": "A tuning dial with tick marks.",
+      "use": "Channel picker (FR-007).",
+      "files": {
+        "svg": "images/ui/ui-channel.svg",
+        "png": "images/ui/ui-channel.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-settings",
+      "type": "image",
+      "category": "ui",
+      "title": "Settings",
+      "description": "A gear.",
+      "use": "Settings (auto-pause, reduced motion, audio volume).",
+      "files": {
+        "svg": "images/ui/ui-settings.svg",
+        "png": "images/ui/ui-settings.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-sound-on",
+      "type": "image",
+      "category": "ui",
+      "title": "Sound on",
+      "description": "A speaker with two sound waves.",
+      "use": "Mute toggle, unmuted state.",
+      "files": {
+        "svg": "images/ui/ui-sound-on.svg",
+        "png": "images/ui/ui-sound-on.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-sound-off",
+      "type": "image",
+      "category": "ui",
+      "title": "Sound off",
+      "description": "A speaker with a cross.",
+      "use": "Mute toggle, muted state.",
+      "files": {
+        "svg": "images/ui/ui-sound-off.svg",
+        "png": "images/ui/ui-sound-off.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "ui-keyboard",
+      "type": "image",
+      "category": "ui",
+      "title": "Keyboard controls",
+      "description": "A small keyboard.",
+      "use": "Keyboard help overlay (FR-036).",
+      "files": {
+        "svg": "images/ui/ui-keyboard.svg",
+        "png": "images/ui/ui-keyboard.png"
+      },
+      "width": 32,
+      "height": 32,
+      "png_width": 128,
+      "png_height": 128
+    },
+    {
+      "id": "dean-of-it-neutral",
+      "type": "image",
+      "category": "characters",
+      "title": "Dean of IT, neutral",
+      "description": "The Dean of IT, with silver curls, round glasses, a teal cardigan and an IT lanyard, looking calm.",
+      "use": "Level briefings and wave previews (FR-028, FR-038).",
+      "files": {
+        "svg": "images/characters/dean-of-it-neutral.svg",
+        "png": "images/characters/dean-of-it-neutral.png"
+      },
+      "width": 256,
+      "height": 256,
+      "png_width": 512,
+      "png_height": 512
+    },
+    {
+      "id": "dean-of-it-pleased",
+      "type": "image",
+      "category": "characters",
+      "title": "Dean of IT, pleased",
+      "description": "The Dean of IT smiling broadly with closed, happy eyes and rosy cheeks.",
+      "use": "Wave passed, level summary and session summary.",
+      "files": {
+        "svg": "images/characters/dean-of-it-pleased.svg",
+        "png": "images/characters/dean-of-it-pleased.png"
+      },
+      "width": 256,
+      "height": 256,
+      "png_width": 512,
+      "png_height": 512
+    },
+    {
+      "id": "dean-of-it-concerned",
+      "type": "image",
+      "category": "characters",
+      "title": "Dean of IT, concerned",
+      "description": "The Dean of IT with worried brows, a wavy mouth and a sweat drop.",
+      "use": "Satisfaction falling near 70%, an old ticket near 90 s, or the maintenance-risk preview.",
+      "files": {
+        "svg": "images/characters/dean-of-it-concerned.svg",
+        "png": "images/characters/dean-of-it-concerned.png"
+      },
+      "width": 256,
+      "height": 256,
+      "png_width": 512,
+      "png_height": 512
+    },
+    {
+      "id": "dean-of-it-angry",
+      "type": "image",
+      "category": "characters",
+      "title": "Dean of IT, firing you",
+      "description": "The Dean of IT frowning and holding up a pink NOTICE slip.",
+      "use": "Fired review. Keep the metric, value, threshold and cause as text beside it (FR-024).",
+      "files": {
+        "svg": "images/characters/dean-of-it-angry.svg",
+        "png": "images/characters/dean-of-it-angry.png"
+      },
+      "width": 256,
+      "height": 256,
+      "png_width": 512,
+      "png_height": 512
+    },
+    {
+      "id": "prop-tree",
+      "type": "image",
+      "category": "props",
+      "title": "Tree",
+      "description": "A round leafy campus tree.",
+      "use": "Decoration on lawn tiles.",
+      "files": {
+        "svg": "images/props/prop-tree.svg",
+        "png": "images/props/prop-tree.png"
+      },
+      "width": 48,
+      "height": 48,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "prop-moving-boxes",
+      "type": "image",
+      "category": "props",
+      "title": "Moving boxes",
+      "description": "Three stacked cardboard boxes, the top one labelled ROUTER.",
+      "use": "Level 2 'Dorm Move-In' decoration.",
+      "files": {
+        "svg": "images/props/prop-moving-boxes.svg",
+        "png": "images/props/prop-moving-boxes.png"
+      },
+      "width": 48,
+      "height": 48,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "prop-pennant",
+      "type": "image",
+      "category": "props",
+      "title": "Homecoming pennant",
+      "description": "A teal triangular pennant reading GO on a short pole.",
+      "use": "Level 3 'Homecoming' decoration.",
+      "files": {
+        "svg": "images/props/prop-pennant.svg",
+        "png": "images/props/prop-pennant.png"
+      },
+      "width": 48,
+      "height": 48,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "prop-coffee",
+      "type": "image",
+      "category": "props",
+      "title": "Coffee mug",
+      "description": "A steaming network-engineer coffee mug with a Wi-Fi symbol.",
+      "use": "Session summary or pause screen decoration.",
+      "files": {
+        "svg": "images/props/prop-coffee.svg",
+        "png": "images/props/prop-coffee.png"
+      },
+      "width": 48,
+      "height": 48,
+      "png_width": 192,
+      "png_height": 192
+    },
+    {
+      "id": "legend-rssi-heatmap",
+      "type": "image",
+      "category": "legends",
+      "title": "RSSI heat-map legend",
+      "description": "A colour scale from -40 dBm (yellow, strong) to -90 dBm (purple, weak). A bold marker at -67 dBm reads 'covered threshold', and the weak side is hatched for 'not covered'.",
+      "use": "Heat-map key. Uses a colour-blind-safe scale plus hatching and numbers, never colour alone (FR-006, FR-035).",
+      "files": {
+        "svg": "images/legends/legend-rssi-heatmap.svg",
+        "png": "images/legends/legend-rssi-heatmap.png"
+      },
+      "width": 480,
+      "height": 96,
+      "png_width": 960,
+      "png_height": 192
+    },
+    {
+      "id": "legend-wall-types",
+      "type": "image",
+      "category": "legends",
+      "title": "Wall types legend",
+      "description": "Drywall, brick and concrete wall samples, each labelled with its signal loss in dB.",
+      "use": "Key for wall types on the map and in briefings. Losses are illustrative (FR-005).",
+      "files": {
+        "svg": "images/legends/legend-wall-types.svg",
+        "png": "images/legends/legend-wall-types.png"
+      },
+      "width": 300,
+      "height": 110,
+      "png_width": 960,
+      "png_height": 352
+    },
+    {
+      "id": "legend-channel-plan",
+      "type": "image",
+      "category": "legends",
+      "title": "2.4 GHz channel plan legend",
+      "description": "Channels 1 to 11 drawn as overlapping humps; channels 1, 6 and 11 are solid and do not overlap each other, the rest are dashed.",
+      "use": "Briefing figure for Level 3 channel planning (FR-007): channels within 4 of each other conflict.",
+      "files": {
+        "svg": "images/legends/legend-channel-plan.svg",
+        "png": "images/legends/legend-channel-plan.png"
+      },
+      "width": 420,
+      "height": 120,
+      "png_width": 960,
+      "png_height": 274
+    },
+    {
+      "id": "stamp-wave-passed",
+      "type": "image",
+      "category": "stamps",
+      "title": "Wave passed stamp",
+      "description": "A tilted rubber-stamp graphic reading \"WAVE PASSED\" with a double border.",
+      "use": "Wave review when satisfaction >= 70.0% and no ticket is older than 90 s (FR-024).",
+      "files": {
+        "svg": "images/stamps/stamp-wave-passed.svg",
+        "png": "images/stamps/stamp-wave-passed.png"
+      },
+      "width": 320,
+      "height": 120,
+      "png_width": 640,
+      "png_height": 240
+    },
+    {
+      "id": "stamp-fired",
+      "type": "image",
+      "category": "stamps",
+      "title": "Fired stamp",
+      "description": "A tilted rubber-stamp graphic reading \"FIRED\" with a double border.",
+      "use": "Wave review when the player is fired. Always show the reason text with it (FR-024).",
+      "files": {
+        "svg": "images/stamps/stamp-fired.svg",
+        "png": "images/stamps/stamp-fired.png"
+      },
+      "width": 320,
+      "height": 120,
+      "png_width": 640,
+      "png_height": 240
+    },
+    {
+      "id": "stamp-level-complete",
+      "type": "image",
+      "category": "stamps",
+      "title": "Level complete stamp",
+      "description": "A tilted rubber-stamp graphic reading \"LEVEL COMPLETE\" with a double border.",
+      "use": "Level summary after the third wave review (FR-026).",
+      "files": {
+        "svg": "images/stamps/stamp-level-complete.svg",
+        "png": "images/stamps/stamp-level-complete.png"
+      },
+      "width": 320,
+      "height": 120,
+      "png_width": 640,
+      "png_height": 240
+    },
+    {
+      "id": "stamp-resolved",
+      "type": "image",
+      "category": "stamps",
+      "title": "Resolved stamp",
+      "description": "A tilted rubber-stamp graphic reading \"RESOLVED\" with a double border.",
+      "use": "Ticket closed after a correct diagnosis and fix (FR-017).",
+      "files": {
+        "svg": "images/stamps/stamp-resolved.svg",
+        "png": "images/stamps/stamp-resolved.png"
+      },
+      "width": 320,
+      "height": 120,
+      "png_width": 640,
+      "png_height": 240
+    },
+    {
+      "id": "app-icon",
+      "type": "image",
+      "category": "brand",
+      "title": "Campus Connect app icon",
+      "description": "A teal rounded square with white Wi-Fi arcs rising above a small white campus building with an amber door.",
+      "use": "Favicon, app icon and social preview mark.",
+      "files": {
+        "svg": "images/brand/app-icon.svg",
+        "png": "images/brand/app-icon.png"
+      },
+      "width": 128,
+      "height": 128,
+      "png_width": 512,
+      "png_height": 512
+    },
+    {
+      "id": "logo-wordmark",
+      "type": "image",
+      "category": "brand",
+      "title": "Campus Connect logo",
+      "description": "The Campus Connect app icon beside the words Campus Connect and the tagline 'Build the network before the crowd arrives.'",
+      "use": "Title screen and README header.",
+      "files": {
+        "svg": "images/brand/logo-wordmark.svg",
+        "png": "images/brand/logo-wordmark.png"
+      },
+      "width": 640,
+      "height": 160,
+      "png_width": 512,
+      "png_height": 128
+    },
+    {
+      "id": "banner-level-1-orientation-week",
+      "type": "image",
+      "category": "banners",
+      "title": "Level 1: Orientation Week",
+      "description": "A sunny banner: the campus library with an access point above it, trees and three new students, beside the title Level 1, Orientation Week.",
+      "use": "Level 1 briefing header (FR-028, FR-031).",
+      "files": {
+        "svg": "images/banners/banner-level-1-orientation-week.svg",
+        "png": "images/banners/banner-level-1-orientation-week.png"
+      },
+      "width": 960,
+      "height": 240,
+      "png_width": 1920,
+      "png_height": 480
+    },
+    {
+      "id": "banner-level-2-dorm-move-in",
+      "type": "image",
+      "category": "banners",
+      "title": "Level 2: Dorm Move-In",
+      "description": "An afternoon banner: two brick dorms with moving boxes and students carrying gear, beside the title Level 2, Dorm Move-In.",
+      "use": "Level 2 briefing header (FR-028, FR-031).",
+      "files": {
+        "svg": "images/banners/banner-level-2-dorm-move-in.svg",
+        "png": "images/banners/banner-level-2-dorm-move-in.png"
+      },
+      "width": 960,
+      "height": 240,
+      "png_width": 1920,
+      "png_height": 480
+    },
+    {
+      "id": "banner-level-3-homecoming",
+      "type": "image",
+      "category": "banners",
+      "title": "Level 3: Homecoming",
+      "description": "A night-time banner with fireworks over the stadium and the student center, with pennants, beside the title Level 3, Homecoming.",
+      "use": "Level 3 briefing header (FR-028, FR-031).",
+      "files": {
+        "svg": "images/banners/banner-level-3-homecoming.svg",
+        "png": "images/banners/banner-level-3-homecoming.png"
+      },
+      "width": 960,
+      "height": 240,
+      "png_width": 1920,
+      "png_height": 480
+    },
+    {
+      "id": "bg-title-campus",
+      "type": "image",
+      "category": "backgrounds",
+      "title": "Campus overview",
+      "description": "A top-down illustrated campus: the library, a dorm, the student center and the stadium joined by sandy paths, with trees, students and three access points broadcasting dashed coverage circles.",
+      "use": "Title screen or session summary background. Put the logo and buttons over the open path area.",
+      "files": {
+        "svg": "images/backgrounds/bg-title-campus.svg",
+        "png": "images/backgrounds/bg-title-campus.png"
+      },
+      "width": 1280,
+      "height": 720,
+      "png_width": 1920,
+      "png_height": 1080
+    },
+    {
+      "id": "sfx-ap-place",
+      "type": "audio",
+      "category": "sfx-build",
+      "title": "Access point placed",
+      "description": "Two quick rising triangle-wave blips with a tiny click, like snapping a device into a ceiling mount.",
+      "use": "Play when an AP is placed or moved (FR-002).",
+      "files": {
+        "ogg": "audio/sfx/sfx-ap-place.ogg",
+        "mp3": "audio/sfx/sfx-ap-place.mp3"
+      },
+      "duration_s": 0.32,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-ap-remove",
+      "type": "audio",
+      "category": "sfx-build",
+      "title": "Equipment removed",
+      "description": "The placement blip in reverse: two falling notes.",
+      "use": "Play when an AP or uplink is removed and refunded (FR-003).",
+      "files": {
+        "ogg": "audio/sfx/sfx-ap-remove.ogg",
+        "mp3": "audio/sfx/sfx-ap-remove.mp3"
+      },
+      "duration_s": 0.3,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-uplink-purchase",
+      "type": "audio",
+      "category": "sfx-build",
+      "title": "Uplink purchased",
+      "description": "A bright two-note register 'ka-ching' with a shimmer of metallic noise.",
+      "use": "Play when an uplink is bought (FR-003).",
+      "files": {
+        "ogg": "audio/sfx/sfx-uplink-purchase.ogg",
+        "mp3": "audio/sfx/sfx-uplink-purchase.mp3"
+      },
+      "duration_s": 0.65,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-uplink-upgrade",
+      "type": "audio",
+      "category": "sfx-build",
+      "title": "Uplink upgraded to 1 Gbps",
+      "description": "A fast five-note rising arpeggio, like a power-up.",
+      "use": "Play when a 100 Mbps uplink is upgraded to 1 Gbps (FR-003).",
+      "files": {
+        "ogg": "audio/sfx/sfx-uplink-upgrade.ogg",
+        "mp3": "audio/sfx/sfx-uplink-upgrade.mp3"
+      },
+      "duration_s": 0.7,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-purchase-refused",
+      "type": "audio",
+      "category": "sfx-build",
+      "title": "Purchase refused",
+      "description": "Two short low buzzes. Not harsh: it means 'not enough budget', not 'you failed'.",
+      "use": "Play when a purchase exceeds the remaining budget; show cost and budget as text (FR-004).",
+      "files": {
+        "ogg": "audio/sfx/sfx-purchase-refused.ogg",
+        "mp3": "audio/sfx/sfx-purchase-refused.mp3"
+      },
+      "duration_s": 0.4,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-channel-change",
+      "type": "audio",
+      "category": "sfx-build",
+      "title": "Channel changed",
+      "description": "Three rising dial clicks, like turning a tuning knob.",
+      "use": "Play when an AP's channel is changed (FR-007).",
+      "files": {
+        "ogg": "audio/sfx/sfx-channel-change.ogg",
+        "mp3": "audio/sfx/sfx-channel-change.mp3"
+      },
+      "duration_s": 0.3,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-ui-click",
+      "type": "audio",
+      "category": "sfx-ui",
+      "title": "Button click",
+      "description": "A tiny, soft tick.",
+      "use": "Generic button and menu click. Keep it quiet.",
+      "files": {
+        "ogg": "audio/sfx/sfx-ui-click.ogg",
+        "mp3": "audio/sfx/sfx-ui-click.mp3"
+      },
+      "duration_s": 0.06,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.5
+    },
+    {
+      "id": "sfx-ui-focus",
+      "type": "audio",
+      "category": "sfx-ui",
+      "title": "Keyboard focus move",
+      "description": "An even tinier, high blip.",
+      "use": "Optional cue when the keyboard map cursor moves (FR-036). Off by default is fine.",
+      "files": {
+        "ogg": "audio/sfx/sfx-ui-focus.ogg",
+        "mp3": "audio/sfx/sfx-ui-focus.mp3"
+      },
+      "duration_s": 0.05,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.3
+    },
+    {
+      "id": "sfx-pause",
+      "type": "audio",
+      "category": "sfx-ui",
+      "title": "Game paused",
+      "description": "Two soft descending sine notes.",
+      "use": "Play when the clock pauses (FR-021). Pair with a visible 'Paused' label.",
+      "files": {
+        "ogg": "audio/sfx/sfx-pause.ogg",
+        "mp3": "audio/sfx/sfx-pause.mp3"
+      },
+      "duration_s": 0.25,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-resume",
+      "type": "audio",
+      "category": "sfx-ui",
+      "title": "Game resumed",
+      "description": "Two soft ascending sine notes.",
+      "use": "Play when the clock resumes (FR-021).",
+      "files": {
+        "ogg": "audio/sfx/sfx-resume.ogg",
+        "mp3": "audio/sfx/sfx-resume.mp3"
+      },
+      "duration_s": 0.25,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-speed-2x",
+      "type": "audio",
+      "category": "sfx-ui",
+      "title": "Speed set to 2x",
+      "description": "A quick double blip, the second higher.",
+      "use": "Play when the clock switches to 2x (FR-021).",
+      "files": {
+        "ogg": "audio/sfx/sfx-speed-2x.ogg",
+        "mp3": "audio/sfx/sfx-speed-2x.mp3"
+      },
+      "duration_s": 0.3,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-restart",
+      "type": "audio",
+      "category": "sfx-ui",
+      "title": "Session restart",
+      "description": "A rising whoosh.",
+      "use": "Play after the player confirms Restart (FR-027).",
+      "files": {
+        "ogg": "audio/sfx/sfx-restart.ogg",
+        "mp3": "audio/sfx/sfx-restart.mp3"
+      },
+      "duration_s": 0.5,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-content-error",
+      "type": "audio",
+      "category": "sfx-ui",
+      "title": "Content error",
+      "description": "Two flat, dissonant beeps.",
+      "use": "Play with the visible content-error message when level data fails validation (FR-032).",
+      "files": {
+        "ogg": "audio/sfx/sfx-content-error.ogg",
+        "mp3": "audio/sfx/sfx-content-error.mp3"
+      },
+      "duration_s": 0.5,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-user-arrive",
+      "type": "audio",
+      "category": "sfx-game",
+      "title": "User arrives",
+      "description": "A soft bubble pop.",
+      "use": "Play (quietly, rate-limited) as users arrive during a wave (FR-023).",
+      "files": {
+        "ogg": "audio/sfx/sfx-user-arrive.ogg",
+        "mp3": "audio/sfx/sfx-user-arrive.mp3"
+      },
+      "duration_s": 0.18,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.35
+    },
+    {
+      "id": "sfx-ticket-open",
+      "type": "audio",
+      "category": "sfx-tickets",
+      "title": "New trouble ticket",
+      "description": "A two-tone help-desk notification chime, played twice.",
+      "use": "Play when a ticket opens (FR-014). Auto-pause follows by default (FR-022).",
+      "files": {
+        "ogg": "audio/sfx/sfx-ticket-open.ogg",
+        "mp3": "audio/sfx/sfx-ticket-open.mp3"
+      },
+      "duration_s": 0.9,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-diagnosis-correct",
+      "type": "audio",
+      "category": "sfx-tickets",
+      "title": "Correct diagnosis",
+      "description": "A bright major arpeggio that lands on a bell tone.",
+      "use": "Play on a correct diagnosis, with the +25 points (FR-017).",
+      "files": {
+        "ogg": "audio/sfx/sfx-diagnosis-correct.ogg",
+        "mp3": "audio/sfx/sfx-diagnosis-correct.mp3"
+      },
+      "duration_s": 1.0,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-diagnosis-wrong",
+      "type": "audio",
+      "category": "sfx-tickets",
+      "title": "Not quite",
+      "description": "Two gentle, descending notes. Encouraging, not punishing: the ticket stays open and no points are lost.",
+      "use": "Play on a wrong diagnosis, alongside the explanation text (FR-016).",
+      "files": {
+        "ogg": "audio/sfx/sfx-diagnosis-wrong.ogg",
+        "mp3": "audio/sfx/sfx-diagnosis-wrong.mp3"
+      },
+      "duration_s": 0.6,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-hint-reveal",
+      "type": "audio",
+      "category": "sfx-tickets",
+      "title": "Hint revealed",
+      "description": "A short sparkle of high, quick bell notes.",
+      "use": "Play when a hint or worked solution is shown (FR-019).",
+      "files": {
+        "ogg": "audio/sfx/sfx-hint-reveal.ogg",
+        "mp3": "audio/sfx/sfx-hint-reveal.mp3"
+      },
+      "duration_s": 0.9,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-ticket-closed",
+      "type": "audio",
+      "category": "sfx-tickets",
+      "title": "Ticket closed",
+      "description": "A rubber-stamp thud followed by a small chime.",
+      "use": "Play when a ticket closes after the fix (FR-017); pairs with stamp-resolved.",
+      "files": {
+        "ogg": "audio/sfx/sfx-ticket-closed.ogg",
+        "mp3": "audio/sfx/sfx-ticket-closed.mp3"
+      },
+      "duration_s": 0.8,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-ticket-resolved-by-change",
+      "type": "audio",
+      "category": "sfx-tickets",
+      "title": "Ticket resolved by network change",
+      "description": "A single neutral chime: good news, but no points.",
+      "use": "Play when an undiagnosed ticket auto-closes (FR-017a).",
+      "files": {
+        "ogg": "audio/sfx/sfx-ticket-resolved-by-change.ogg",
+        "mp3": "audio/sfx/sfx-ticket-resolved-by-change.mp3"
+      },
+      "duration_s": 0.8,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-ticket-aging-warning",
+      "type": "audio",
+      "category": "sfx-tickets",
+      "title": "Ticket getting old",
+      "description": "Three urgent but soft pulses.",
+      "use": "Play once when any ticket passes about 60 s, as a warning before the 90 s firing limit (FR-020, FR-024).",
+      "files": {
+        "ogg": "audio/sfx/sfx-ticket-aging-warning.ogg",
+        "mp3": "audio/sfx/sfx-ticket-aging-warning.mp3"
+      },
+      "duration_s": 1.0,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-wave-start",
+      "type": "audio",
+      "category": "sfx-waves",
+      "title": "Wave starts (campus bell)",
+      "description": "A ringing electric school bell that stops and decays.",
+      "use": "Play when a wave of users starts arriving (FR-023).",
+      "files": {
+        "ogg": "audio/sfx/sfx-wave-start.ogg",
+        "mp3": "audio/sfx/sfx-wave-start.mp3"
+      },
+      "duration_s": 1.6,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-wave-review-open",
+      "type": "audio",
+      "category": "sfx-waves",
+      "title": "Wave review opens",
+      "description": "A paper-swoosh, like a report sliding onto a desk.",
+      "use": "Play when the end-of-wave review appears (FR-024).",
+      "files": {
+        "ogg": "audio/sfx/sfx-wave-review-open.ogg",
+        "mp3": "audio/sfx/sfx-wave-review-open.mp3"
+      },
+      "duration_s": 0.6,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-wave-passed",
+      "type": "audio",
+      "category": "sfx-waves",
+      "title": "Wave passed",
+      "description": "A short, cheerful four-note fanfare.",
+      "use": "Play when a wave review passes (FR-024).",
+      "files": {
+        "ogg": "audio/sfx/sfx-wave-passed.ogg",
+        "mp3": "audio/sfx/sfx-wave-passed.mp3"
+      },
+      "duration_s": 1.6,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-fired",
+      "type": "audio",
+      "category": "sfx-waves",
+      "title": "You're fired",
+      "description": "A droopy, brassy descending 'wah-wah-wah-waaah' with a wobbling last note. Comic, not cruel.",
+      "use": "Play on the fired review, under the reason text and the Retry level button (FR-024, FR-025).",
+      "files": {
+        "ogg": "audio/sfx/sfx-fired.ogg",
+        "mp3": "audio/sfx/sfx-fired.mp3"
+      },
+      "duration_s": 2.6,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-level-complete",
+      "type": "audio",
+      "category": "sfx-waves",
+      "title": "Level complete",
+      "description": "A longer brass-and-organ victory fanfare ending on a held major chord.",
+      "use": "Play with the level summary (FR-026).",
+      "files": {
+        "ogg": "audio/sfx/sfx-level-complete.ogg",
+        "mp3": "audio/sfx/sfx-level-complete.mp3"
+      },
+      "duration_s": 3.0,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-session-complete",
+      "type": "audio",
+      "category": "sfx-waves",
+      "title": "Session complete",
+      "description": "A grand I-IV-V-I cadence with a bell-like melody and a cymbal swell.",
+      "use": "Play on the final session summary after Level 3 (FR-026).",
+      "files": {
+        "ogg": "audio/sfx/sfx-session-complete.ogg",
+        "mp3": "audio/sfx/sfx-session-complete.mp3"
+      },
+      "duration_s": 4.0,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-alarm-noc-klaxon",
+      "type": "audio",
+      "category": "sfx-alarms",
+      "title": "NOC klaxon (loop)",
+      "description": "A two-tone network-operations-centre klaxon alternating 600 Hz and 900 Hz. Loops seamlessly.",
+      "use": "Loop during the Level 3 uplink failure until the player pauses or acts. Keep volume low and stop on pause.",
+      "files": {
+        "ogg": "audio/sfx/sfx-alarm-noc-klaxon.ogg",
+        "mp3": "audio/sfx/sfx-alarm-noc-klaxon.mp3"
+      },
+      "duration_s": 2.4,
+      "loop": true,
+      "bpm": null,
+      "suggested_volume": 0.5
+    },
+    {
+      "id": "sfx-alarm-pager",
+      "type": "audio",
+      "category": "sfx-alarms",
+      "title": "On-call pager",
+      "description": "Three sharp, high pager beeps.",
+      "use": "Play when a ticket opens while the player is in another panel, or as the on-call page for an outage.",
+      "files": {
+        "ogg": "audio/sfx/sfx-alarm-pager.ogg",
+        "mp3": "audio/sfx/sfx-alarm-pager.mp3"
+      },
+      "duration_s": 1.2,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.5
+    },
+    {
+      "id": "sfx-alarm-server-room",
+      "type": "audio",
+      "category": "sfx-alarms",
+      "title": "Server-room whoop alarm",
+      "description": "Three rising 'whoop' sirens.",
+      "use": "Big outage moment: play once when the student center uplink fails (FR-011).",
+      "files": {
+        "ogg": "audio/sfx/sfx-alarm-server-room.ogg",
+        "mp3": "audio/sfx/sfx-alarm-server-room.mp3"
+      },
+      "duration_s": 3.0,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.55
+    },
+    {
+      "id": "sfx-alarm-satisfaction-low",
+      "type": "audio",
+      "category": "sfx-alarms",
+      "title": "Satisfaction falling",
+      "description": "A soft, repeating two-note warning beep.",
+      "use": "Play once when campus satisfaction drops below about 75%, before the 70% firing line (FR-024).",
+      "files": {
+        "ogg": "audio/sfx/sfx-alarm-satisfaction-low.ogg",
+        "mp3": "audio/sfx/sfx-alarm-satisfaction-low.mp3"
+      },
+      "duration_s": 1.6,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.5
+    },
+    {
+      "id": "sfx-uplink-failure",
+      "type": "audio",
+      "category": "sfx-alarms",
+      "title": "Uplink fails (power-down)",
+      "description": "A falling power-down whine with electrical crackles, like equipment dying.",
+      "use": "Play the instant a scheduled uplink failure fires (FR-011).",
+      "files": {
+        "ogg": "audio/sfx/sfx-uplink-failure.ogg",
+        "mp3": "audio/sfx/sfx-uplink-failure.mp3"
+      },
+      "duration_s": 1.6,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.8
+    },
+    {
+      "id": "sfx-dialup-modem-handshake",
+      "type": "audio",
+      "category": "sfx-retro",
+      "title": "Dial-up modem handshake",
+      "description": "A retro modem connecting: dial tone, seven touch-tone digits, ringback, the answer tone, warbly training chirps, a 'bong' and screeching hiss. Synthesised, about 9 seconds.",
+      "use": "Comedy beat for the Level 2 briefing ('some students brought routers from home'), a loading screen, or an easter egg for a slow zone.",
+      "files": {
+        "ogg": "audio/sfx/sfx-dialup-modem-handshake.ogg",
+        "mp3": "audio/sfx/sfx-dialup-modem-handshake.mp3"
+      },
+      "duration_s": 9.18,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.6
+    },
+    {
+      "id": "sfx-dial-tone",
+      "type": "audio",
+      "category": "sfx-retro",
+      "title": "Phone dial tone",
+      "description": "A short telephone dial tone.",
+      "use": "Help-desk phone flavour, e.g. before a voice complaint plays.",
+      "files": {
+        "ogg": "audio/sfx/sfx-dial-tone.ogg",
+        "mp3": "audio/sfx/sfx-dial-tone.mp3"
+      },
+      "duration_s": 0.8,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.5
+    },
+    {
+      "id": "sfx-printer-ticket",
+      "type": "audio",
+      "category": "sfx-retro",
+      "title": "Dot-matrix ticket printout",
+      "description": "A short burst of chattering printer beeps and paper noise.",
+      "use": "Alternative 'ticket opened' cue with a retro help-desk feel.",
+      "files": {
+        "ogg": "audio/sfx/sfx-printer-ticket.ogg",
+        "mp3": "audio/sfx/sfx-printer-ticket.mp3"
+      },
+      "duration_s": 0.9,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.5
+    },
+    {
+      "id": "voice-user-complaint-slow",
+      "type": "audio",
+      "category": "voices",
+      "title": "User: 'My Wi-Fi is so slow!'",
+      "description": "A higher-pitched student voice in exasperated gibberish whose intonation rises at the end. No real words.",
+      "use": "Play (at random, rate-limited) when a ticket opens for a slow zone. Keep the ticket text as the real information.",
+      "files": {
+        "ogg": "audio/voices/voice-user-complaint-slow.ogg",
+        "mp3": "audio/voices/voice-user-complaint-slow.mp3"
+      },
+      "duration_s": 1.2,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.6
+    },
+    {
+      "id": "voice-user-complaint-down",
+      "type": "audio",
+      "category": "voices",
+      "title": "User: 'Is the internet down?!'",
+      "description": "A rising, questioning gibberish complaint ending on a high, indignant note.",
+      "use": "Play when users lose service in an uncovered zone or a building with its uplink down.",
+      "files": {
+        "ogg": "audio/voices/voice-user-complaint-down.ogg",
+        "mp3": "audio/voices/voice-user-complaint-down.mp3"
+      },
+      "duration_s": 1.65,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.6
+    },
+    {
+      "id": "voice-user-complaint-buffering",
+      "type": "audio",
+      "category": "voices",
+      "title": "User: 'Buffering again...'",
+      "description": "A low, grumbling gibberish sigh that falls in pitch at the end.",
+      "use": "Play for Video users in congested zones (Level 2).",
+      "files": {
+        "ogg": "audio/voices/voice-user-complaint-buffering.ogg",
+        "mp3": "audio/voices/voice-user-complaint-buffering.mp3"
+      },
+      "duration_s": 2.56,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.6
+    },
+    {
+      "id": "voice-user-yell-hey",
+      "type": "audio",
+      "category": "voices",
+      "title": "User yelling 'Hey! Can anyone help?!'",
+      "description": "A fast, loud, high-pitched gibberish shout.",
+      "use": "Play when a ticket is older than about 60 s.",
+      "files": {
+        "ogg": "audio/voices/voice-user-yell-hey.ogg",
+        "mp3": "audio/voices/voice-user-yell-hey.mp3"
+      },
+      "duration_s": 1.76,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.6
+    },
+    {
+      "id": "voice-user-wail",
+      "type": "audio",
+      "category": "voices",
+      "title": "User wailing 'Nooo, my save!'",
+      "description": "A long, dramatic gibberish wail that rises and falls.",
+      "use": "Comedy reaction when a building's uplink fails.",
+      "files": {
+        "ogg": "audio/voices/voice-user-wail.ogg",
+        "mp3": "audio/voices/voice-user-wail.mp3"
+      },
+      "duration_s": 1.55,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.6
+    },
+    {
+      "id": "voice-crowd-grumble-loop",
+      "type": "audio",
+      "category": "voices",
+      "title": "Angry crowd murmur (loop)",
+      "description": "Twelve overlapping gibberish voices muttering and grumbling. Crossfaded to loop.",
+      "use": "Background bed that fades in as campus satisfaction falls; scale its volume with (100 - satisfaction).",
+      "files": {
+        "ogg": "audio/voices/voice-crowd-grumble-loop.ogg",
+        "mp3": "audio/voices/voice-crowd-grumble-loop.mp3"
+      },
+      "duration_s": 4.5,
+      "loop": true,
+      "bpm": null,
+      "suggested_volume": 0.35
+    },
+    {
+      "id": "voice-dean-briefing",
+      "type": "audio",
+      "category": "voices",
+      "title": "Dean of IT: briefing",
+      "description": "A calm, mid-pitched gibberish voice: an even, matter-of-fact statement.",
+      "use": "Play when a level briefing opens.",
+      "files": {
+        "ogg": "audio/voices/voice-dean-briefing.ogg",
+        "mp3": "audio/voices/voice-dean-briefing.mp3"
+      },
+      "duration_s": 2.52,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.65
+    },
+    {
+      "id": "voice-dean-pleased",
+      "type": "audio",
+      "category": "voices",
+      "title": "Dean of IT: pleased",
+      "description": "A cheerful gibberish exclamation that rises happily.",
+      "use": "Play on wave passed or level complete.",
+      "files": {
+        "ogg": "audio/voices/voice-dean-pleased.ogg",
+        "mp3": "audio/voices/voice-dean-pleased.mp3"
+      },
+      "duration_s": 2.19,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.65
+    },
+    {
+      "id": "voice-dean-hmm",
+      "type": "audio",
+      "category": "voices",
+      "title": "Dean of IT: 'Hmm...'",
+      "description": "A slow, doubtful gibberish 'hmm' that ends on a questioning rise.",
+      "use": "Play when satisfaction is near the 70% line.",
+      "files": {
+        "ogg": "audio/voices/voice-dean-hmm.ogg",
+        "mp3": "audio/voices/voice-dean-hmm.mp3"
+      },
+      "duration_s": 1.65,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.65
+    },
+    {
+      "id": "voice-dean-fired",
+      "type": "audio",
+      "category": "voices",
+      "title": "Dean of IT: 'You're fired!'",
+      "description": "A stern, emphatic gibberish declaration that drops in pitch at the end.",
+      "use": "Play on the fired review with the dean-of-it-angry portrait.",
+      "files": {
+        "ogg": "audio/voices/voice-dean-fired.ogg",
+        "mp3": "audio/voices/voice-dean-fired.mp3"
+      },
+      "duration_s": 2.13,
+      "loop": false,
+      "bpm": null,
+      "suggested_volume": 0.65
+    },
+    {
+      "id": "music-title-theme",
+      "type": "audio",
+      "category": "music",
+      "title": "Title theme (loop)",
+      "description": "A bright, friendly chiptune theme at 104 BPM in C major: a triangle melody, plucky arpeggios and a light beat. 8 bars, loops seamlessly.",
+      "use": "Title screen and Level 1 briefing.",
+      "files": {
+        "ogg": "audio/music/music-title-theme.ogg",
+        "mp3": "audio/music/music-title-theme.mp3"
+      },
+      "duration_s": 18.46,
+      "loop": true,
+      "bpm": 104,
+      "suggested_volume": 0.45
+    },
+    {
+      "id": "music-build-calm",
+      "type": "audio",
+      "category": "music",
+      "title": "Build phase (loop)",
+      "description": "A mellow electric-piano groove at 88 BPM in F major with a soft bass, a shaker and an occasional sine-lead phrase. Unhurried, for thinking.",
+      "use": "Plays while paused, between waves, and in the zone table. Thinking time is unlimited, so the music should be too.",
+      "files": {
+        "ogg": "audio/music/music-build-calm.ogg",
+        "mp3": "audio/music/music-build-calm.mp3"
+      },
+      "duration_s": 21.82,
+      "loop": true,
+      "bpm": 88,
+      "suggested_volume": 0.4
+    },
+    {
+      "id": "music-wave-rush",
+      "type": "audio",
+      "category": "music",
+      "title": "Wave in progress (loop)",
+      "description": "A driving 128 BPM A-minor track with pulsing bass, a sixteenth-note arpeggio and a buzzy lead. Energetic but not frantic.",
+      "use": "Plays while a wave is running. Duck or pause it when the game pauses (FR-021).",
+      "files": {
+        "ogg": "audio/music/music-wave-rush.ogg",
+        "mp3": "audio/music/music-wave-rush.mp3"
+      },
+      "duration_s": 15.0,
+      "loop": true,
+      "bpm": 128,
+      "suggested_volume": 0.4
+    },
+    {
+      "id": "music-homecoming-march",
+      "type": "audio",
+      "category": "music",
+      "title": "Homecoming march (loop)",
+      "description": "A marching-band-style loop at 116 BPM in B-flat major, with a brassy lead, oom-pah bass and snare rolls.",
+      "use": "Level 3 'Homecoming' waves and briefing.",
+      "files": {
+        "ogg": "audio/music/music-homecoming-march.ogg",
+        "mp3": "audio/music/music-homecoming-march.mp3"
+      },
+      "duration_s": 16.55,
+      "loop": true,
+      "bpm": 116,
+      "suggested_volume": 0.4
+    },
+    {
+      "id": "music-wave-review",
+      "type": "audio",
+      "category": "music",
+      "title": "Wave review (loop)",
+      "description": "A slow, reflective 76 BPM pad in C major with a quiet bass and a short sine melody. Calm, for reading the review.",
+      "use": "Wave review and level summary screens (FR-024, FR-026).",
+      "files": {
+        "ogg": "audio/music/music-wave-review.ogg",
+        "mp3": "audio/music/music-wave-review.mp3"
+      },
+      "duration_s": 12.63,
+      "loop": true,
+      "bpm": 76,
+      "suggested_volume": 0.35
+    },
+    {
+      "id": "music-session-summary",
+      "type": "audio",
+      "category": "music",
+      "title": "Session summary (loop)",
+      "description": "A warm, triumphant 96 BPM anthem in D major with organ chords, glockenspiel arpeggios and a singing lead.",
+      "use": "Final session summary and credits.",
+      "files": {
+        "ogg": "audio/music/music-session-summary.ogg",
+        "mp3": "audio/music/music-session-summary.mp3"
+      },
+      "duration_s": 20.0,
+      "loop": true,
+      "bpm": 96,
+      "suggested_volume": 0.45
+    },
+    {
+      "id": "amb-campus-quad-loop",
+      "type": "audio",
+      "category": "ambience",
+      "title": "Campus quad ambience (loop)",
+      "description": "A soft outdoor bed: distant air, light wind and occasional birdsong. Crossfaded to loop.",
+      "use": "Quiet background under the build phase, or alone when music is turned off.",
+      "files": {
+        "ogg": "audio/ambience/amb-campus-quad-loop.ogg",
+        "mp3": "audio/ambience/amb-campus-quad-loop.mp3"
+      },
+      "duration_s": 7.0,
+      "loop": true,
+      "bpm": null,
+      "suggested_volume": 0.3
+    },
+    {
+      "id": "amb-server-closet-loop",
+      "type": "audio",
+      "category": "ambience",
+      "title": "Server closet hum (loop)",
+      "description": "Mains hum and fan noise from a network closet, with the occasional relay tick. Loops (6 s, whole-cycle hum).",
+      "use": "Background when the uplink or core-switch panel is open.",
+      "files": {
+        "ogg": "audio/ambience/amb-server-closet-loop.ogg",
+        "mp3": "audio/ambience/amb-server-closet-loop.mp3"
+      },
+      "duration_s": 6.0,
+      "loop": true,
+      "bpm": null,
+      "suggested_volume": 0.25
+    }
+  ]
+}
