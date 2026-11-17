@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Campus Connect tests</title>
+  <style>
+    body { font: 15px/1.4 system-ui, sans-serif; margin: 1rem 2rem; }
+    #summary { font-weight: bold; padding: .5rem .75rem; border-radius: 4px; }
+    #summary.pass { background: #dff3e4; }
+    #summary.fail { background: #fbdcda; }
+    .fail-line { color: #a3271f; margin: .25rem 0; }
+    .ok-line { color: #1b6e3c; margin: .1rem 0; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>Campus Connect tests</h1>
+  <p id="summary">Running…</p>
+  <div id="results"></div>
+
+  <script type="module">
+    // Dependency-free runner. Each module exports `tests`: [{ id, name, run(t) }].
+    // Zero discovered tests is a failure. A module that fails to import is a failure.
+    const MODULES = [
+      './rules.test.js',
+      './content.test.js',
+      './assets.test.js',
+      './sim.test.js',
+      './level1.test.js',
+      './ui.test.js',
+      './diagnosis.test.js',
+      './state.test.js',
+      './level2.test.js',
+      './review.test.js',
+      './zonetable.test.js',
+    ];
+
+    const results = document.getElementById('results');
+    const summary = document.getElementById('summary');
+    const failures = [];
+    let total = 0;
+    let passed = 0;
+
+    function line(cls, text) {
+      const p = document.createElement('div');
+      p.className = cls;
+      p.textContent = text;
+      results.appendChild(p);
+    }
+
+    const t = {
+      ok(cond, msg = 'expected truthy') { if (!cond) throw new Error(msg); },
+      eq(actual, expected, msg = '') {
+        if (!Object.is(actual, expected)) {
+          throw new Error(`${msg} expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`.trim());
+        }
+      },
+      close(actual, expected, tol, msg = '') {
+        if (!(Math.abs(actual - expected) <= tol)) {
+          throw new Error(`${msg} expected ${expected} ±${tol}, got ${actual}`.trim());
+        }
+      },
+      deepEq(actual, expected, msg = '') {
+        const a = JSON.stringify(actual);
+        const b = JSON.stringify(expected);
+        if (a !== b) throw new Error(`${msg} expected ${b}, got ${a}`.trim());
+      },
+      throws(fn, msg = 'expected throw') {
+        try { fn(); } catch (e) { return e; }
+        throw new Error(msg);
+      },
+    };
+
+    for (const path of MODULES) {
+      let mod;
+      try {
+        mod = await import(path);
+      } catch (e) {
+        total += 1;
+        failures.push(`${path}: import failed: ${e.message}`);
+        line('fail-line', `FAIL ${path}: import failed: ${e.message}`);
+        continue;
+      }
+      for (const test of mod.tests || []) {
+        total += 1;
+        try {
+          await test.run(t);
+          passed += 1;
+          line('ok-line', `ok   ${test.id} ${test.name}`);
+        } catch (e) {
+          failures.push(`${test.id}: ${e.message}`);
+          line('fail-line', `FAIL ${test.id} ${test.name}: ${e.message}`);
+        }
+      }
+    }
+
+    let ok = failures.length === 0 && total > 0;
+    if (total === 0) failures.push('no tests discovered');
+    summary.className = ok ? 'pass' : 'fail';
+    summary.id = 'summary';
+    summary.textContent = `${ok ? 'PASS' : 'FAIL'} ${passed}/${total}` +
+      (failures.length ? ` | failed: ${failures.map(f => f.split(':')[0]).join(', ')}` : '');
+    document.title = summary.textContent;
+  </script>
+</body>
+</html>

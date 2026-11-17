@@ -42,6 +42,9 @@ thinking time is unlimited.
 - Q: If the player fixes a zone by building before diagnosing its ticket, what happens? → A:
   Auto-close as "Resolved by network change" with no diagnosis points; the notice names the
   cause(s) true when the ticket opened and what fixed it.
+- Analyze fix (2026-11-17, default applied; confirm or change): users from a wave leave when it
+  ends, each wave's count is the total present at wave end, and Wave 1 starts on the first resume
+  after the briefing.
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -167,7 +170,7 @@ one ticket, then check the zone table matches the map.
    the color.
 6. **Given** a reduced-motion preference, **When** I play, **Then** user-movement animation is
    removed and no information is hidden or delayed.
-7. **Given** a narrow browser window, **When** I play, **Then** pause and action buttons remain
+7. **Given** a browser window as narrow as 320 CSS px (and a 1366×768 laptop screen), **When** I play, **Then** pause and action buttons remain
    visible, and dense data scrolls within its own labeled container.
 
 ---
@@ -207,14 +210,16 @@ and to reduced capacity with it.
 - **Utilization boundary**: exactly 100% utilization is not congested.
 - **Firing boundary**: 70.0% satisfaction passes; 69.9% fires.
 - **AP tie**: two APs with equal RSSI at a zone; the lowest AP ID serves it.
-- **No demand**: with no users on campus, campus satisfaction is 100% and no tickets open.
+- **No demand**: with no users on campus, campus satisfaction is 100% and no tickets open. A zone
+  with no users has zone satisfaction 100% and never opens a ticket.
 - **Problem fixed before diagnosis**: if a ticket's zone becomes fully served before it is
   diagnosed, the ticket closes as "Resolved by network change" with no diagnosis points, and the
   notice names the cause(s) true when it opened and the change that fixed it.
 - **Wrong answer then building**: diagnosis is always graded against the zone's current model
   state, never a stale answer key.
-- **Unsupported content**: an AP channel outside 1–11, a wall line passing exactly through a cell
-  corner, or a zone outside any building shows a visible content error, and the level does not
+- **Unsupported content**: an AP channel outside 1–11, a signal path passing exactly through a
+  point where a wall ends or joins another wall (the middle of a straight same-type wall is fine,
+  so walls should run edge to edge), or a zone outside any building shows a visible content error, and the level does not
   start or grade.
 - **Purchase at exact budget**: a purchase costing exactly the remaining budget succeeds.
 - **Retry after firing**: no score, budget, or equipment carries over from the failed attempt.
@@ -281,8 +286,9 @@ and to reduced capacity with it.
   - *Uplink congested*: the building's uplink utilization exceeds 100%.
 - **FR-016**: Submitting any true cause MUST be accepted with full points; the explanation MUST
   list every true cause and suggest fixing them in this order: Uplink down → Weak signal →
-  Channel interference → Uplink congested → AP overloaded. A wrong diagnosis MUST leave the ticket open, explain which value rules that cause out,
-  suggest the next place to look, and not change the score.
+  Channel interference → Uplink congested → AP overloaded. A wrong diagnosis MUST leave the
+  ticket open, explain which value rules that cause out, suggest the next place to look, and not
+  change the score.
 - **FR-017**: A correct diagnosis MUST set the ticket to *Diagnosed – awaiting fix* and award 25
   points exactly once. The ticket MUST close when the zone reaches 100% satisfaction.
 - **FR-017a**: An undiagnosed ticket whose zone reaches 100% satisfaction MUST auto-close as
@@ -304,8 +310,11 @@ and to reduced capacity with it.
 - **FR-022**: Auto-pause on ticket arrival and at each wave review MUST be available and on by
   default.
 - **FR-023**: Each level MUST have three waves of 60 simulated seconds, with users arriving
-  evenly during the wave into zones defined by level data. The next wave's size and user types
-  MUST be previewed before it starts, and it starts when the player continues from the review.
+  evenly during the wave into zones defined by level data. A wave's stated size is the total
+  number of its users present when it ends: users from the previous wave leave when it ends, and
+  the new wave's users arrive from zero. Wave 1 starts when the player first resumes after the
+  level briefing. The next wave's size and user types MUST be previewed before it starts, and it
+  starts when the player continues from the review.
 - **FR-024**: At each wave review, the player MUST be fired if campus satisfaction is below 70.0%
   or any ticket has been open longer than 90 simulated seconds. The review MUST name the metric,
   value, threshold, and network cause, and offer Retry level.
@@ -317,7 +326,7 @@ and to reduced capacity with it.
 - **FR-027**: Restart MUST ask for confirmation, then clear the session and return to the Level 1
   briefing.
 - **FR-028**: Each level MUST open paused with a briefing introducing one new concept through a
-  worked example on a different map, and stating "This is a simplified model; real networks have
+  static worked example on a small illustrative map (shown in the briefing, not playable), and stating "This is a simplified model; real networks have
   more effects."
 
 **Scoring**
@@ -358,13 +367,19 @@ and to reduced capacity with it.
   Feedback MUST be persistent text announced to assistive technology. Reduced motion MUST remove
   user-movement animation without hiding information.
 - **FR-037**: The game MUST run with no account, backend, network service, or API key, and the
-  same level, actions, and seed MUST produce identical results and scores.
+  same level with the same actions at the same simulation steps MUST produce identical results
+  and scores.
 - **FR-038**: Art, characters (the Dean of IT and users), and humor MUST be original.
+- **FR-039**: The game MUST use the supplied original art and audio pack in `assets/` (indexed by
+  `assets/manifest.json`) for map sprites, overlays, channel badges, ticket and cause icons, the
+  Dean of IT, and sounds. Sound MUST be optional, off by default, and controllable with a visible
+  on/off button. No sound may carry information alone: every sound has an on-screen text
+  equivalent. If the art or audio fails to load, the game MUST still be fully playable.
 
 ### Key Entities
 
 - **Level**: name, concept, briefing, map, budget, AP limit, channel mode (locked or manual),
-  waves, scheduled failures, random seed.
+  waves, scheduled failures.
 - **Campus map / Building / Zone**: grid of cells; buildings contain zones; walls sit on cell
   edges with a type and loss.
 - **Access point**: ID, cell, channel, price; derived RSSI per zone, conflicts, effective
@@ -429,7 +444,14 @@ person before implementation (constitution Principle I).
 - **Failures**: a scheduled uplink failure lasts for the rest of the level.
 - **References**: the `[VERIFY]` sections in `StarterKit/SPEC.md` must be filled in before
   release; this is a release dependency, not a design choice.
-- **Platform**: a typical laptop browser; no mobile-specific layout beyond narrow-window support.
+- **Sound**: off by default, with a mute toggle, because autoplay is restricted and unexpected
+  sound is unwelcome in some settings. Music and effects are optional polish and are cut before
+  anything else in the build.
+- **Platform**: a typical laptop browser (1366×768 or larger); no mobile-specific layout beyond
+  narrow-window support down to 320 CSS px.
+- **Wall-corner rule**: a signal path through a wall end, a T-junction, or a join of two different
+  wall types is a content error; a path through the middle of one straight same-type wall counts as
+  one crossing. Authors run walls edge to edge. Revisit only if a level layout becomes impractical, with your approval.
 - **Exclusions**: no 5/6 GHz, non-20 MHz channels, client limits, roaming, band steering,
   multipath, MU-MIMO/OFDMA, TCP behavior, wired switching, spanning tree, security, vendor
   features, accounts, multiplayer, backend, runtime AI, persistent leaderboard, or level editor.

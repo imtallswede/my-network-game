@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Connect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to game</a>
+  <header class="topbar">
+    <h1 id="game-title" tabindex="-1"><img class="brand" src="assets/images/brand/logo-wordmark.svg" alt="Campus Connect" height="36"></h1>
+    <div id="hud" class="hud" aria-label="Game status"></div>
+    <button id="sound-toggle" class="action secondary" type="button" aria-pressed="false" hidden>
+      <img id="sound-icon" alt="" width="20" height="20" src="assets/images/ui/ui-sound-off.svg">
+      <span id="sound-label">Sound: off</span>
+    </button>
+  </header>
+
+  <!-- Persistent feedback: stays on screen as text and is announced to assistive technology. -->
+  <div id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <main id="main" class="layout">
+    <section id="app" class="app" aria-label="Game view">
+      <p id="loading">Loading levels…</p>
+    </section>
+
+    <section id="main-panel" class="main-panel" aria-label="Campus" hidden>
+      <div role="tablist" aria-label="Campus views" class="tabs">
+        <button role="tab" id="tab-map" aria-selected="true" aria-controls="panel-map" type="button">Map</button>
+        <button role="tab" id="tab-table" aria-selected="false" aria-controls="panel-table" tabindex="-1" type="button">Zone table</button>
+      </div>
+      <div role="tabpanel" id="panel-map" aria-labelledby="tab-map" class="panel" tabindex="0"></div>
+      <div role="tabpanel" id="panel-table" aria-labelledby="tab-table" class="panel" tabindex="0" hidden></div>
+    </section>
+
+    <aside id="side-panel" class="side-panel" aria-label="Equipment, tickets and selected zone" hidden>
+      <section id="equipment-section" aria-labelledby="equip-h">
+        <h2 id="equip-h">Equipment</h2>
+        <div id="equipment" class="scroll-box" tabindex="0" role="region" aria-label="Equipment and purchases"></div>
+      </section>
+      <section id="tickets" aria-labelledby="tickets-h">
+        <h2 id="tickets-h">Tickets</h2>
+        <div id="ticket-list" class="scroll-box" tabindex="0" role="region" aria-label="Ticket list"></div>
+      </section>
+      <section id="zone-details" aria-labelledby="zone-h">
+        <h2 id="zone-h">Selected zone</h2>
+        <div id="zone-detail-body" class="scroll-box" tabindex="0" role="region" aria-label="Selected zone details"></div>
+      </section>
+    </aside>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

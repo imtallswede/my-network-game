@@ -1,0 +1,694 @@
+{
+  "schemaVersion": 1,
+  "constants": {
+    "eirpDbm": 17,
+    "pl1mDb": 40,
+    "pathLossExponent": 3.0,
+    "coverageThresholdDbm": -67.0,
+    "ccaThresholdDbm": -82.0,
+    "apCapacityMbps": 100,
+    "conflictChannelDelta": 4,
+    "channelRange": [1, 11],
+    "wallLossDb": {
+      "drywall": 3,
+      "brick": 8,
+      "concrete": 12
+    },
+    "demandMbps": {
+      "light": 2,
+      "video": 5,
+      "event": 3
+    },
+    "prices": {
+      "ap": 500,
+      "uplink100": 200,
+      "uplink1000": 800
+    },
+    "uplinkCapacityMbps": [100, 1000],
+    "ticketOpenSteps": 100,
+    "fireTicketAgeSteps": 900,
+    "fireSatisfactionPct": 70.0,
+    "waveSteps": 600,
+    "pointsPerDiagnosis": 25,
+    "minDistanceM": 1
+  },
+  "sources": [
+    {
+      "id": "itu-p1238",
+      "title": "ITU-R P.1238 Propagation data and prediction methods for indoor radiocommunication systems",
+      "url": "",
+      "section": "TODO(release gate): record the exact section for the log-distance model and indoor exponent",
+      "claim": "Log-distance indoor path loss with a distance-power-loss exponent around 3",
+      "status": "illustrative"
+    },
+    {
+      "id": "ieee-80211-channels",
+      "title": "IEEE 802.11-2020 channel plan and clear-channel-assessment requirements",
+      "url": "",
+      "section": "TODO(release gate): record the exact clauses for the 2.4 GHz channel plan and the -82 dBm CCA threshold",
+      "claim": "2.4 GHz channels are 5 MHz apart; channels 1, 6 and 11 do not overlap; -82 dBm 20 MHz CCA",
+      "status": "illustrative"
+    },
+    {
+      "id": "design-target-67",
+      "title": "Vendor wireless design guide (to be named)",
+      "url": "",
+      "section": "TODO(release gate): name one vendor guide and its section",
+      "claim": "-67 dBm as a coverage design target for voice and video",
+      "status": "illustrative"
+    },
+    {
+      "id": "wall-losses",
+      "title": "Illustrative wall attenuation values for the game",
+      "url": "",
+      "section": "n/a",
+      "claim": "Drywall 3 dB, brick 8 dB, concrete 12 dB are approximate game constants",
+      "status": "illustrative"
+    },
+    {
+      "id": "capacity-model",
+      "title": "Illustrative capacity constants for the game",
+      "url": "",
+      "section": "n/a",
+      "claim": "100 Mbps per AP and uplink sizes of 100 Mbps and 1 Gbps are approximate game constants",
+      "status": "illustrative"
+    }
+  ],
+  "levels": [
+    {
+      "id": "L1",
+      "title": "Orientation Week",
+      "outcomeId": "LO1",
+      "concept": "Coverage: how distance and walls weaken the signal",
+      "budget": 2000,
+      "apLimit": 3,
+      "channelMode": {
+        "type": "locked",
+        "channels": [1, 6, 11]
+      },
+      "art": {
+        "banner": "banner-level-1-orientation-week",
+        "building": "building-library"
+      },
+      "briefing": {
+        "paragraphs": [
+          "You are the new network manager of a small college campus. Students arrive at the library in three waves. Place access points (APs) so every zone where students sit has usable Wi-Fi before they arrive.",
+          "Signal strength is measured as RSSI in dBm. Closer to 0 is stronger: -50 dBm is strong, and -67 dBm is the weakest signal this game counts as covered. Distance and walls weaken the signal. Each wall costs extra decibels: drywall 3 dB, brick 8 dB, concrete 12 dB (illustrative values).",
+          "One AP in the middle of this library will not cover it, because the drywall and concrete walls cut the signal. Try a different spot for each section, and watch the RSSI number on every zone.",
+          "Press Space or the Pause button at any time. While paused you can still build and inspect, and the clock does not move. The first wave starts when you first resume."
+        ],
+        "simplification": "This is a simplified model; real networks have more effects.",
+        "sourceIds": [
+          "itu-p1238",
+          "design-target-67",
+          "wall-losses"
+        ],
+        "example": {
+          "cols": 4,
+          "rows": 3,
+          "aps": [[0, 1]],
+          "zone": [3, 1],
+          "steps": [
+            "AP at the left, zone 15 m away, no walls: 17 - 40 - 35.3 = -58.3 dBm. That is above -67, so the zone is covered.",
+            "Put one concrete wall in between: -58.3 - 12 = -70.3 dBm. That is below -67, so the zone is not covered."
+          ]
+        }
+      },
+      "map": {
+        "cols": 16,
+        "rows": 7,
+        "buildings": [
+          {
+            "id": "library",
+            "name": "Library",
+            "zones": [
+              [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1],
+              [9, 1], [10, 1], [11, 1], [12, 1], [13, 1], [14, 1], [1, 2], [2, 2],
+              [3, 2], [4, 2], [5, 2], [6, 2], [7, 2], [8, 2], [9, 2], [10, 2],
+              [11, 2], [12, 2], [13, 2], [14, 2], [1, 3], [2, 3], [3, 3], [4, 3],
+              [5, 3], [6, 3], [7, 3], [8, 3], [9, 3], [10, 3], [11, 3], [12, 3],
+              [13, 3], [14, 3], [1, 4], [2, 4], [3, 4], [4, 4], [5, 4], [6, 4],
+              [7, 4], [8, 4], [9, 4], [10, 4], [11, 4], [12, 4], [13, 4], [14, 4],
+              [1, 5], [2, 5], [3, 5], [4, 5], [5, 5], [6, 5], [7, 5], [8, 5],
+              [9, 5], [10, 5], [11, 5], [12, 5], [13, 5], [14, 5]
+            ],
+            "startingUplinks": [1000]
+          }
+        ],
+        "walls": [
+          {
+            "a": [6, 1],
+            "b": [6, 2],
+            "type": "drywall"
+          },
+          {
+            "a": [6, 2],
+            "b": [6, 3],
+            "type": "drywall"
+          },
+          {
+            "a": [6, 3],
+            "b": [6, 4],
+            "type": "drywall"
+          },
+          {
+            "a": [6, 4],
+            "b": [6, 5],
+            "type": "drywall"
+          },
+          {
+            "a": [6, 5],
+            "b": [6, 6],
+            "type": "drywall"
+          },
+          {
+            "a": [10, 1],
+            "b": [10, 2],
+            "type": "concrete"
+          },
+          {
+            "a": [10, 2],
+            "b": [10, 3],
+            "type": "concrete"
+          },
+          {
+            "a": [10, 3],
+            "b": [10, 4],
+            "type": "concrete"
+          },
+          {
+            "a": [10, 4],
+            "b": [10, 5],
+            "type": "concrete"
+          },
+          {
+            "a": [10, 5],
+            "b": [10, 6],
+            "type": "concrete"
+          }
+        ]
+      },
+      "startingEquipment": {
+        "aps": [],
+        "uplinks": []
+      },
+      "waves": [
+        {
+          "index": 1,
+          "previewText": "20 Light users arrive across the library (browsing and email, 2 Mbps each).",
+          "arrivals": [
+            {
+              "userType": "light",
+              "count": 20,
+              "zones": [
+                [2, 2], [4, 4], [3, 5], [5, 3], [7, 2], [8, 4], [9, 5], [12, 2],
+                [13, 4], [11, 5], [14, 3], [7, 5]
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "previewText": "40 Light users arrive across the library (browsing and email, 2 Mbps each).",
+          "arrivals": [
+            {
+              "userType": "light",
+              "count": 40,
+              "zones": [
+                [2, 2], [4, 4], [3, 5], [5, 3], [7, 2], [8, 4], [9, 5], [12, 2],
+                [13, 4], [11, 5], [14, 3], [7, 5]
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "previewText": "60 Light users arrive across the library (browsing and email, 2 Mbps each).",
+          "arrivals": [
+            {
+              "userType": "light",
+              "count": 60,
+              "zones": [
+                [2, 2], [4, 4], [3, 5], [5, 3], [7, 2], [8, 4], [9, 5], [12, 2],
+                [13, 4], [11, 5], [14, 3], [7, 5]
+              ]
+            }
+          ]
+        }
+      ],
+      "failures": [],
+      "tickets": [],
+      "hints": {
+        "method": "Check the RSSI of each occupied zone. Below -67 dBm means not covered. Move or add an AP closer, and remember each wall costs extra decibels.",
+        "worked": "Put one AP in each section of the library (left of the drywall, between the walls, right of the concrete wall) so every zone is within about 25 m with at most one wall in the way."
+      }
+    },
+    {
+      "id": "L2",
+      "title": "Dorm Move-In",
+      "outcomeId": "LO2",
+      "concept": "Capacity: an AP and an uplink each have a limit",
+      "budget": 2500,
+      "apLimit": 3,
+      "channelMode": {
+        "type": "locked",
+        "channels": [
+          1,
+          6,
+          11
+        ]
+      },
+      "art": {
+        "banner": "banner-level-2-dorm-move-in",
+        "building": "building-dorm"
+      },
+      "briefing": {
+        "paragraphs": [
+          "Move-in night. Students in the dorm stream video, 5 Mbps each. Every AP can carry 100 Mbps, and the whole dorm shares one 100 Mbps uplink to the rest of the network.",
+          "When a zone is unhappy for 10 seconds a trouble ticket opens. Pick the cause that the numbers support: Weak signal, AP overloaded, Channel interference, Uplink congested, or Uplink down. Each wrong answer tells you which value ruled it out.",
+          "More APs add wireless capacity but not uplink capacity. Compare the signal first, then the AP, then the uplink. Upgrading an uplink to 1 Gbps costs $600.",
+          "Press Space or the Pause button at any time. The first wave starts when you first resume."
+        ],
+        "simplification": "This is a simplified model; real networks have more effects.",
+        "sourceIds": [
+          "capacity-model",
+          "design-target-67"
+        ],
+        "example": {
+          "cols": 4,
+          "rows": 3,
+          "aps": [
+            [
+              0,
+              1
+            ]
+          ],
+          "zone": [
+            3,
+            1
+          ],
+          "steps": [
+            "Three APs each serve 12 Video users: 12 x 5 = 60 Mbps, which is 60% of an AP's 100 Mbps. The APs are fine.",
+            "All 36 users share one 100 Mbps uplink: 3 x 60 = 180 Mbps wanted, 100 Mbps available. That is 180%, so each user gets 100 / 180 = 55.6% of their demand. A fourth AP would not help; a bigger uplink does."
+          ]
+        }
+      },
+      "map": {
+        "cols": 14,
+        "rows": 5,
+        "buildings": [
+          {
+            "id": "dorm",
+            "name": "Dorm",
+            "zones": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                4,
+                1
+              ],
+              [
+                5,
+                1
+              ],
+              [
+                6,
+                1
+              ],
+              [
+                7,
+                1
+              ],
+              [
+                8,
+                1
+              ],
+              [
+                9,
+                1
+              ],
+              [
+                10,
+                1
+              ],
+              [
+                11,
+                1
+              ],
+              [
+                12,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                2
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                5,
+                2
+              ],
+              [
+                6,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                8,
+                2
+              ],
+              [
+                9,
+                2
+              ],
+              [
+                10,
+                2
+              ],
+              [
+                11,
+                2
+              ],
+              [
+                12,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                5,
+                3
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                7,
+                3
+              ],
+              [
+                8,
+                3
+              ],
+              [
+                9,
+                3
+              ],
+              [
+                10,
+                3
+              ],
+              [
+                11,
+                3
+              ],
+              [
+                12,
+                3
+              ]
+            ],
+            "startingUplinks": [
+              100
+            ]
+          }
+        ],
+        "walls": [
+          {
+            "a": [
+              5,
+              1
+            ],
+            "b": [
+              5,
+              2
+            ],
+            "type": "drywall"
+          },
+          {
+            "a": [
+              5,
+              2
+            ],
+            "b": [
+              5,
+              3
+            ],
+            "type": "drywall"
+          },
+          {
+            "a": [
+              5,
+              3
+            ],
+            "b": [
+              5,
+              4
+            ],
+            "type": "drywall"
+          },
+          {
+            "a": [
+              9,
+              1
+            ],
+            "b": [
+              9,
+              2
+            ],
+            "type": "drywall"
+          },
+          {
+            "a": [
+              9,
+              2
+            ],
+            "b": [
+              9,
+              3
+            ],
+            "type": "drywall"
+          },
+          {
+            "a": [
+              9,
+              3
+            ],
+            "b": [
+              9,
+              4
+            ],
+            "type": "drywall"
+          }
+        ]
+      },
+      "startingEquipment": {
+        "aps": [],
+        "uplinks": []
+      },
+      "waves": [
+        {
+          "index": 1,
+          "previewText": "20 Video users arrive across the dorm (5 Mbps each, 100 Mbps in all).",
+          "arrivals": [
+            {
+              "userType": "video",
+              "count": 20,
+              "zones": [
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  3
+                ],
+                [
+                  6,
+                  2
+                ],
+                [
+                  7,
+                  3
+                ],
+                [
+                  10,
+                  1
+                ],
+                [
+                  11,
+                  2
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "previewText": "40 Video users arrive across the dorm (200 Mbps in all).",
+          "arrivals": [
+            {
+              "userType": "video",
+              "count": 40,
+              "zones": [
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  3
+                ],
+                [
+                  6,
+                  2
+                ],
+                [
+                  7,
+                  3
+                ],
+                [
+                  10,
+                  1
+                ],
+                [
+                  11,
+                  2
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "previewText": "50 Video users arrive across the dorm (250 Mbps in all).",
+          "arrivals": [
+            {
+              "userType": "video",
+              "count": 50,
+              "zones": [
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  3
+                ],
+                [
+                  6,
+                  2
+                ],
+                [
+                  7,
+                  3
+                ],
+                [
+                  10,
+                  1
+                ],
+                [
+                  11,
+                  2
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "failures": [],
+      "tickets": [
+        {
+          "zone": [
+            2,
+            1
+          ],
+          "title": "Dorm room 1A",
+          "complaint": "My video keeps freezing."
+        },
+        {
+          "zone": [
+            3,
+            3
+          ],
+          "title": "Dorm room 1B",
+          "complaint": "Nothing loads at all in here."
+        },
+        {
+          "zone": [
+            6,
+            2
+          ],
+          "title": "Dorm room 2A",
+          "complaint": "Everything is slow tonight."
+        },
+        {
+          "zone": [
+            7,
+            3
+          ],
+          "title": "Dorm room 2B",
+          "complaint": "Wi-Fi is really slow tonight, even though the signal looks great."
+        },
+        {
+          "zone": [
+            10,
+            1
+          ],
+          "title": "Dorm room 3A",
+          "complaint": "Video buffers every few seconds."
+        },
+        {
+          "zone": [
+            11,
+            2
+          ],
+          "title": "Dorm room 3B",
+          "complaint": "I cannot stream anything."
+        }
+      ],
+      "hints": {
+        "method": "Compare the signal, then the AP, then the uplink. A zone with a strong signal and an AP below 100% points upstream: check the building's uplink load.",
+        "worked": "Add up the Mbps every AP in the building carries and compare it with the uplink's capacity. If the total is more than the uplink can carry, every user gets the same share of their demand: capacity divided by total. Upgrade the uplink to 1 Gbps."
+      }
+    }
+  ]
+}
